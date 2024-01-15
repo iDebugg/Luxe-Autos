@@ -3,11 +3,50 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AboutUs from './AboutUs'
+import HowItWorks from './HowItWorks'
+import ContactUs from './ContactUs';
+import ConnectWallet from './ConnectWallet';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import LandingPage from './LandingPage';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path:"Landingpage",
+    element: <LandingPage />
+  },
+  {
+    path:"AboutUs",
+    element: <AboutUs />
+  },
+  {
+    path:"HowItWorks",
+    element: <HowItWorks />
+  },
+  {
+    path:"ContactUs",
+    element: <ContactUs />
+  },
+  {
+    path:"ConnectWallet",
+    element: <ConnectWallet />
+  }
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <RouterProvider router={router} />
   </React.StrictMode>
 );
 
